@@ -1,6 +1,6 @@
 """Administrator user-management endpoints."""
 
-from fastapi import APIRouter, Depends, HTTPException, Request, status
+from fastapi import APIRouter, Depends, HTTPException, Path, Request, status
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
@@ -11,6 +11,9 @@ from app.schemas import RoleUpdateIn
 from app.security import ADMIN_ONLY, require_roles, user_public, write_audit
 
 router = APIRouter(prefix="/users", tags=["users"])
+
+# SQLite INTEGER is 64-bit; larger path IDs would raise OverflowError -> HTTP 500.
+MAX_SQLITE_INT = 2**63 - 1
 
 
 @router.get("")
@@ -24,11 +27,11 @@ def list_users(
 
 @router.patch("/{user_id}")
 def update_user(
-    user_id: int,
     payload: RoleUpdateIn,
     request: Request,
     admin: User = Depends(require_roles(*ADMIN_ONLY)),
     db: Session = Depends(get_db),
+    user_id: int = Path(..., le=MAX_SQLITE_INT),
 ) -> dict:
     target = db.get(User, user_id)
     if not target:

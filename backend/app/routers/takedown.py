@@ -2,7 +2,7 @@
 
 import json
 
-from fastapi import APIRouter, Depends, HTTPException, Response, status
+from fastapi import APIRouter, Depends, HTTPException, Path, Response, status
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -13,6 +13,9 @@ from app.security import ANALYST_PLUS, require_roles
 from app.services.takedown import build_takedown_pdf, build_takedown_text
 
 router = APIRouter(prefix="/takedown", tags=["takedown"])
+
+# SQLite INTEGER is 64-bit; larger path IDs would raise OverflowError -> HTTP 500.
+MAX_SQLITE_INT = 2**63 - 1
 
 
 def _get_det_and_brand(detection_id: int, db: Session) -> tuple[dict, dict]:
@@ -59,7 +62,7 @@ def _get_det_and_brand(detection_id: int, db: Session) -> tuple[dict, dict]:
 
 @router.get("/{detection_id}/text")
 def get_takedown_text(
-    detection_id: int,
+    detection_id: int = Path(..., le=MAX_SQLITE_INT),
     user: User = Depends(require_roles(*ANALYST_PLUS)),
     db: Session = Depends(get_db),
 ) -> dict[str, str]:
@@ -71,7 +74,7 @@ def get_takedown_text(
 
 @router.get("/{detection_id}/pdf")
 def get_takedown_pdf(
-    detection_id: int,
+    detection_id: int = Path(..., le=MAX_SQLITE_INT),
     user: User = Depends(require_roles(*ANALYST_PLUS)),
     db: Session = Depends(get_db),
 ) -> Response:

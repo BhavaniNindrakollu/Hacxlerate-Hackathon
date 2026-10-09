@@ -229,3 +229,27 @@ def test_export_detections(admin):
     assert body["count"] > 0
     assert len(body["items"]) == body["count"]
     assert body["exported_by"] == admin.user["email"]
+
+
+def test_oversized_path_ids_return_422_not_500(admin):
+    """IDs larger than SQLite's 64-bit INTEGER must be rejected by validation, never crash."""
+    big = 99999999999999999999  # > 2**63 - 1
+    assert admin.get(f"/api/detections/{big}").status_code == 422
+    assert admin.get(f"/api/takedown/{big}/text").status_code == 422
+    assert admin.get(f"/api/takedown/{big}/pdf").status_code == 422
+    assert admin.patch(f"/api/users/{big}", json={"role": "viewer"}).status_code == 422
+    assert admin.delete(f"/api/detections/{big}").status_code == 422
+
+
+def test_valid_out_of_range_id_still_404(admin):
+    """In-range but nonexistent IDs keep their 404 semantics."""
+    assert admin.get("/api/detections/999999").status_code == 404
+    assert admin.get("/api/detections/-1").status_code == 404
+
+
+def test_upload_serving_headers_block_script_execution(admin):
+    """Served uploads carry sandbox CSP + nosniff so uploaded SVG/HTML cannot execute scripts."""
+    res = admin.get("/uploads/paytm_official.png")
+    assert res.status_code == 200
+    assert res.headers.get("content-security-policy") == "sandbox"
+    assert res.headers.get("x-content-type-options") == "nosniff"

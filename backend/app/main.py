@@ -115,7 +115,15 @@ def serve_upload(filename: str, user: User = Depends(get_current_user)) -> FileR
     path = get_settings().upload_path / safe_name
     if not path.is_file():
         raise HTTPException(status_code=404, detail="File not found.")
-    return FileResponse(path)
+    # sandbox CSP neutralizes scripts in user-uploaded SVG/HTML opened directly;
+    # <img> embedding is governed by this page's headers and still works.
+    return FileResponse(
+        path,
+        headers={
+            "Content-Security-Policy": "sandbox",
+            "X-Content-Type-Options": "nosniff",
+        },
+    )
 
 
 dist_candidates = [

@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from fastapi import APIRouter, Depends, HTTPException, Request, status
+from fastapi import APIRouter, Depends, HTTPException, Path as PathParam, Request, status
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
@@ -25,6 +25,9 @@ from app.security import (
 )
 
 router = APIRouter(prefix="/detections", tags=["detections"])
+
+# SQLite INTEGER is 64-bit; larger path IDs would raise OverflowError -> HTTP 500.
+MAX_SQLITE_INT = 2**63 - 1
 
 
 @router.get("/export")
@@ -45,7 +48,7 @@ def export_detections(
 
 @router.get("/{detection_id}")
 def get_detection(
-    detection_id: int,
+    detection_id: int = PathParam(..., le=MAX_SQLITE_INT),
     user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ) -> dict[str, Any]:
@@ -140,8 +143,8 @@ def delete_detection_history(
 
 @router.delete("/{detection_id}")
 def delete_detection(
-    detection_id: int,
     request: Request,
+    detection_id: int = PathParam(..., le=MAX_SQLITE_INT),
     user: User = Depends(require_roles(*ANALYST_PLUS)),
     db: Session = Depends(get_db),
 ) -> dict[str, str]:

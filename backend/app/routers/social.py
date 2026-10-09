@@ -11,6 +11,7 @@ from app.connectors.factory import get_social_connector
 from app.db import get_db
 from app.models import AppSetting, Brand, Detection, ScanRun, User
 from app.routers.brand import _to_brand_out, seed_demo_brand
+from app.routers.sources import _get_setting_bool
 from app.security import ANALYST_PLUS, get_current_user, require_roles, write_audit
 from app.services.scoring import score_candidate
 
@@ -155,13 +156,18 @@ def list_social_detections(
 
         results.append(formatted)
 
-    latest_run = db.scalar(
-        select(ScanRun).where(ScanRun.scan_type == "social").order_by(desc(ScanRun.id))
-    )
+    # Current availability, not the last scan's historical status — a past
+    # simulated outage must not keep the "unavailable" banner up after the
+    # toggle is cleared (matches GET /api/sources semantics).
+    is_sim_unavailable = _get_setting_bool(db, "simulate_social_unavailable")
 
     return {
-        "source_status": latest_run.source_status if latest_run else "ok",
-        "source_message": latest_run.source_message if latest_run else None,
+        "source_status": "unavailable" if is_sim_unavailable else "ok",
+        "source_message": (
+            "source unavailable, showing cached/sample data (simulated)"
+            if is_sim_unavailable
+            else None
+        ),
         "count": len(results),
         "items": results,
     }

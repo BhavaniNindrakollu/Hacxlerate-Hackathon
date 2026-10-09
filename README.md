@@ -152,10 +152,10 @@ cd backend
 
 **Latest result:**
 ```text
-57 passed, 3 warnings in 83.50s
+62 passed, 3 warnings in 32s
 ```
 
-Coverage includes: signup success/duplicate/validation, login success/invalid/expired sessions, logout session invalidation, unauthenticated access rejection on every protected endpoint, role restrictions (viewer/analyst/admin), unauthorized delete-history attempts, authorized deletion with confirmation + rollback, data persistence across restarts, brands/official-assets surviving history deletion, user-to-user & IDOR protections, unavailable-connector resilience, official-asset exclusion (never flagged), look-alike detection (swaps/spacing/punctuation/homoglyphs/leetspeak/added words), innocent-compound false-positive prevention, takedown pack outputs, and detection-engine consistency.
+Coverage includes: signup success/duplicate/validation, login success/invalid/expired sessions, logout session invalidation, unauthenticated access rejection on every protected endpoint, role restrictions (viewer/analyst/admin), unauthorized delete-history attempts, authorized deletion with confirmation + rollback, data persistence across restarts, brands/official-assets surviving history deletion, user-to-user & IDOR protections, unavailable-connector resilience, source-status accuracy on listings, oversized-ID rejection (no 500s), upload sandbox headers, official-asset exclusion (never flagged), look-alike detection (swaps/spacing/punctuation/homoglyphs/leetspeak/added words), innocent-compound false-positive prevention, takedown pack outputs, and detection-engine consistency.
 
 Frontend production build: `cd frontend && npm run build` → ✅ 2519 modules transformed.
 

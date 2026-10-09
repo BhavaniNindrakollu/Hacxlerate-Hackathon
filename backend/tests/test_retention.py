@@ -191,3 +191,25 @@ def test_apps_scan_survives_simulated_source_outage(admin):
     listing = admin.get("/api/detections/apps").json()
     assert listing["source_status"] == "unavailable"
     assert listing["count"] > 0
+
+
+def test_listing_source_status_reflects_current_toggle_not_last_scan(admin):
+    """Regression: a past outage-simulation scan must not pin 'unavailable' on listings forever."""
+    admin.post("/api/sources/toggle", json={"simulate_social_unavailable": True})
+    admin.post("/api/scan/social")
+    during = admin.get("/api/detections/social").json()
+    assert during["source_status"] == "unavailable"
+
+    admin.post("/api/sources/toggle", json={"simulate_social_unavailable": False})
+    social = admin.get("/api/detections/social").json()
+    assert social["source_status"] == "ok"
+    assert social["source_message"] is None
+    assert social["count"] > 0
+
+    admin.post("/api/sources/toggle", json={"simulate_apps_unavailable": True})
+    admin.post("/api/scan/apps")
+    admin.post("/api/sources/toggle", json={"simulate_apps_unavailable": False})
+    apps = admin.get("/api/detections/apps").json()
+    assert apps["source_status"] == "ok"
+    assert apps["source_message"] is None
+    assert apps["count"] > 0
