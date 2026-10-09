@@ -1,0 +1,35 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# App data
+backend/*.db
+backend/*.db.bak
+backend/*.db-*
+backend/backups/
+# Ignore the entire uploads dir (personal logos/uploaded images).
+# Demo seed images ship from backend/app/data/seed_uploads/ and are copied
+# into the configured UPLOAD_DIR automatically at startup.
+backend/uploads/*
+!backend/uploads/.gitkeep
+*.sqlite3
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Env
+.env
+.env.local
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

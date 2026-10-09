@@ -1,0 +1,600 @@
+[
+  {
+    "id": "soc-1",
+    "platform": "twitter",
+    "name": "Paytm",
+    "handle": "paytm",
+    "bio": "India's leading payments and financial services company. Official Twitter handle of Paytm. #PaytmKaro",
+    "avatar_url": "/uploads/paytm_official.png",
+    "followers_count": 3240000,
+    "created_at": "2011-04-12T10:00:00Z",
+    "profile_url": "https://twitter.com/paytm",
+    "links": [
+      "https://paytm.com"
+    ],
+    "is_verified": true
+  },
+  {
+    "id": "soc-2",
+    "platform": "instagram",
+    "name": "Paytm",
+    "handle": "paytm",
+    "bio": "Building for India. India's favorite payment app. Tag @paytm #PaytmKaro",
+    "avatar_url": "/uploads/paytm_official.png",
+    "followers_count": 1850000,
+    "created_at": "2014-06-20T11:00:00Z",
+    "profile_url": "https://instagram.com/paytm",
+    "links": [
+      "https://paytm.com"
+    ],
+    "is_verified": true
+  },
+  {
+    "id": "soc-3",
+    "platform": "youtube",
+    "name": "Paytm Official",
+    "handle": "paytm",
+    "bio": "Official YouTube channel for Paytm tutorials, announcements, and product updates.",
+    "avatar_url": "/uploads/paytm_official.png",
+    "followers_count": 1200000,
+    "created_at": "2012-01-15T09:00:00Z",
+    "profile_url": "https://youtube.com/@paytm",
+    "links": [
+      "https://paytm.com"
+    ],
+    "is_verified": true
+  },
+  {
+    "id": "soc-4",
+    "platform": "linkedin",
+    "name": "Paytm (One97 Communications)",
+    "handle": "paytm",
+    "bio": "Paytm is India's largest digital goods and payment platform. An One97 Communications initiative.",
+    "avatar_url": "/uploads/paytm_official.png",
+    "followers_count": 890000,
+    "created_at": "2010-08-01T08:00:00Z",
+    "profile_url": "https://linkedin.com/company/paytm",
+    "links": [
+      "https://paytm.com"
+    ],
+    "is_verified": true
+  },
+  {
+    "id": "soc-5",
+    "platform": "telegram",
+    "name": "Paytm Official Updates",
+    "handle": "paytmofficial",
+    "bio": "Official broadcast channel for Paytm merchant and consumer updates.",
+    "avatar_url": "/uploads/paytm_official.png",
+    "followers_count": 450000,
+    "created_at": "2018-05-10T14:00:00Z",
+    "profile_url": "https://t.me/paytmofficial",
+    "links": [
+      "https://paytm.com"
+    ],
+    "is_verified": true
+  },
+  {
+    "id": "soc-6",
+    "platform": "twitter",
+    "name": "Paytn Official Care",
+    "handle": "paytn_care",
+    "bio": "Official Customer Support Helpline. DM us your UPI issue or refund claim. 24x7 helpline.",
+    "avatar_url": "/uploads/paytm_clone.png",
+    "followers_count": 14,
+    "created_at": "2026-10-05T15:57:43.816333",
+    "profile_url": "https://twitter.com/paytn_care",
+    "links": [
+      "https://bit.ly/paytn-support-dm"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-7",
+    "platform": "instagram",
+    "name": "Pyatm Rewards & Bonus",
+    "handle": "pyatm_rewards",
+    "bio": "Congratulations! Instant Rs. 2000 cashback voucher. Click bit.ly/pyatm-bonus to claim reward now. DM to claim.",
+    "avatar_url": "/uploads/paytm_clone.png",
+    "followers_count": 78,
+    "created_at": "2026-10-03T15:57:43.816333",
+    "profile_url": "https://instagram.com/pyatm_rewards",
+    "links": [
+      "https://bit.ly/pyatm-bonus"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-8",
+    "platform": "telegram",
+    "name": "Patym 24x7 Dispute Support",
+    "handle": "patym_disputes",
+    "bio": "Fast resolution for frozen wallet or pending transaction. DM helpline agent with phone number and OTP.",
+    "avatar_url": "/uploads/paytm_lookalike.png",
+    "followers_count": 120,
+    "created_at": "2026-09-27T15:57:43.816333",
+    "profile_url": "https://t.me/patym_disputes",
+    "links": [
+      "https://t.me/patym_disputes"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-9",
+    "platform": "twitter",
+    "name": "Paytm Urgent KYC Support",
+    "handle": "p\u0430ytm_kychelp",
+    "bio": "Alert: Complete your pending KYC within 24 hours to avoid wallet freeze. Click link to verify immediately.",
+    "avatar_url": "/uploads/paytm_clone.png",
+    "followers_count": 35,
+    "created_at": "2026-10-04T15:57:43.816333",
+    "profile_url": "https://twitter.com/paytm_kychelp",
+    "links": [
+      "http://paytm-kyc-verify-portal.top"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-10",
+    "platform": "instagram",
+    "name": "Paytm Official Giveaways",
+    "handle": "paytm_0fficial",
+    "bio": "Official festive giveaway! Rs 5000 for top 100 lucky users. DM to claim pending bonus. Free UPI transfer.",
+    "avatar_url": "/uploads/paytm_clone.png",
+    "followers_count": 210,
+    "created_at": "2026-09-24T15:57:43.816333",
+    "profile_url": "https://instagram.com/paytm_0fficial",
+    "links": [
+      "https://bit.ly/paytm-giveaway-claim"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-11",
+    "platform": "twitter",
+    "name": "Paytm Helpdesk Center",
+    "handle": "paytrn_helpdesk",
+    "bio": "Authorized Customer Helpdesk. Send your failed transaction ID. We resolve UPI and Fastag charge issues in 10 mins.",
+    "avatar_url": "/uploads/paytm_lookalike.png",
+    "followers_count": 64,
+    "created_at": "2026-10-01T15:57:43.816333",
+    "profile_url": "https://twitter.com/paytrn_helpdesk",
+    "links": [
+      "https://tinyurl.com/paytrn-help"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-12",
+    "platform": "telegram",
+    "name": "Paytm India Rewards Club",
+    "handle": "paytm_1ndia_club",
+    "bio": "Lottery pool for Indian Paytm users! Daily cash prizes. Join group and DM admin to claim rewards.",
+    "avatar_url": "/uploads/paytm_lookalike.png",
+    "followers_count": 410,
+    "created_at": "2026-09-21T15:57:43.816333",
+    "profile_url": "https://t.me/paytm_1ndia_club",
+    "links": [
+      "https://t.me/joinchat/paytm1ndia"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-13",
+    "platform": "twitter",
+    "name": "Pay.tm Customer Help",
+    "handle": "pay.tm_help",
+    "bio": "Dedicated support desk for Paytm merchant QR and Soundbox errors. WhatsApp call support active.",
+    "avatar_url": "/uploads/paytm_lookalike.png",
+    "followers_count": 88,
+    "created_at": "2026-09-29T15:57:43.816333",
+    "profile_url": "https://twitter.com/pay.tm_help",
+    "links": [
+      "https://wa.me/919999988888"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-14",
+    "platform": "facebook",
+    "name": "Pay Tm Official Care",
+    "handle": "pay_tm_care",
+    "bio": "Official Facebook Care Page for Paytm customers. Contact here for instant payment refunds.",
+    "avatar_url": "/uploads/paytm_clone.png",
+    "followers_count": 150,
+    "created_at": "2026-09-17T15:57:43.816333",
+    "profile_url": "https://facebook.com/pay_tm_care",
+    "links": [
+      "https://fb.me/pay_tm_care"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-15",
+    "platform": "twitter",
+    "name": "Paytm Official Support Desk",
+    "handle": "paytm_official_care",
+    "bio": "Paytm Toll-free Support Representative. Unblock your wallet immediately. DM to claim refund.",
+    "avatar_url": "/uploads/paytm_clone.png",
+    "followers_count": 42,
+    "created_at": "2026-10-06T15:57:43.816333",
+    "profile_url": "https://twitter.com/paytm_official_care",
+    "links": [
+      "https://bit.ly/paytm-care-desk"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-16",
+    "platform": "instagram",
+    "name": "Paytm Login Portal India",
+    "handle": "paytm_login_india",
+    "bio": "Web login portal for Paytm wallet and payments bank. Re-authenticate your session securely.",
+    "avatar_url": "/uploads/paytm_lookalike.png",
+    "followers_count": 95,
+    "created_at": "2026-09-30T15:57:43.816333",
+    "profile_url": "https://instagram.com/paytm_login_india",
+    "links": [
+      "http://paytm-auth-portal.in"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-17",
+    "platform": "telegram",
+    "name": "Paytm Cashback & Loot Deals",
+    "handle": "paytm_loot_rewards",
+    "bio": "Free recharge tricks, Paytm scratch cards, 100% cashback promo codes. Giveaway every hour! DM to claim bonus.",
+    "avatar_url": "/uploads/paytm_clone.png",
+    "followers_count": 530,
+    "created_at": "2026-09-14T15:57:43.816333",
+    "profile_url": "https://t.me/paytm_loot_rewards",
+    "links": [
+      "https://t.me/paytm_loot_rewards"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-18",
+    "platform": "twitter",
+    "name": "Paytm Helpline Service",
+    "handle": "paytm_helpline_247",
+    "bio": "24/7 Helpline for Paytm users. Failed recharge or pending merchant settlement? Send WhatsApp to resolve.",
+    "avatar_url": "/uploads/paytm_lookalike.png",
+    "followers_count": 60,
+    "created_at": "2026-10-02T15:57:43.816333",
+    "profile_url": "https://twitter.com/paytm_helpline_247",
+    "links": [
+      "https://wa.me/918888877777"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-19",
+    "platform": "instagram",
+    "name": "Paytm Free Bonus Claim",
+    "handle": "paytm_bonus_claim",
+    "bio": "Claim your Rs 1500 festival reward. Enter details on link and receive money directly in Paytm wallet.",
+    "avatar_url": "/uploads/paytm_clone.png",
+    "followers_count": 110,
+    "created_at": "2026-10-05T15:57:43.816333",
+    "profile_url": "https://instagram.com/paytm_bonus_claim",
+    "links": [
+      "https://claim-paytm-gift.xyz"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-20",
+    "platform": "twitter",
+    "name": "Paytm KYC Verification Desk",
+    "handle": "paytm_kyc_verification",
+    "bio": "Authorized KYC update agent for One97 wallet users. Avoid account suspension. Send PAN card copy.",
+    "avatar_url": "/uploads/paytm_clone.png",
+    "followers_count": 32,
+    "created_at": "2026-10-07T15:57:43.816333",
+    "profile_url": "https://twitter.com/paytm_kyc_verification",
+    "links": [
+      "https://bit.ly/paytm-kyc-desk"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-21",
+    "platform": "facebook",
+    "name": "Paytm Deals & Promo Codes",
+    "handle": "paytm_deals_coupons",
+    "bio": "Get latest coupon codes and discount vouchers for movie tickets, flight bookings and mobile recharges on Paytm.",
+    "avatar_url": "/uploads/paytm_lookalike.png",
+    "followers_count": 1400,
+    "created_at": "2023-03-10T10:00:00Z",
+    "profile_url": "https://facebook.com/paytm_deals_coupons",
+    "links": [
+      "https://couponsworld.in"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-22",
+    "platform": "instagram",
+    "name": "Paytm Soundbox Updates",
+    "handle": "paytm_soundbox_shop",
+    "bio": "Unofficial reseller of refurbished Paytm QR soundbox devices and stands for retail stores.",
+    "avatar_url": "/uploads/paytm_lookalike.png",
+    "followers_count": 820,
+    "created_at": "2023-08-14T09:00:00Z",
+    "profile_url": "https://instagram.com/paytm_soundbox_shop",
+    "links": [
+      "https://merchantdevices.in"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-23",
+    "platform": "twitter",
+    "name": "Paytm Investor Watch",
+    "handle": "paytm_investor_hub",
+    "bio": "Tracking One97 Communications share price, quarterly earnings, and fintech industry analysis.",
+    "avatar_url": "/uploads/neutral_tech.png",
+    "followers_count": 3500,
+    "created_at": "2022-11-20T12:00:00Z",
+    "profile_url": "https://twitter.com/paytm_investor_hub",
+    "links": [
+      "https://fintechreports.com"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-24",
+    "platform": "telegram",
+    "name": "Paytm Fastag Recharge Tips",
+    "handle": "paytm_fastag_tips",
+    "bio": "Tips and tricks to recharge highway Fastag tolls without convenience fees.",
+    "avatar_url": "/uploads/paytm_lookalike.png",
+    "followers_count": 920,
+    "created_at": "2023-05-18T16:00:00Z",
+    "profile_url": "https://t.me/paytm_fastag_tips",
+    "links": [
+      "https://t.me/paytm_fastag_tips"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-25",
+    "platform": "youtube",
+    "name": "Paytm Tutorial Guide Hindi",
+    "handle": "paytm_guide_hindi",
+    "bio": "Learn how to create UPI ID, add bank account, and use soundbox in Hindi. Community tutorials.",
+    "avatar_url": "/uploads/neutral_tech.png",
+    "followers_count": 12500,
+    "created_at": "2021-04-10T10:00:00Z",
+    "profile_url": "https://youtube.com/@paytm_guide_hindi",
+    "links": [
+      "https://youtube.com"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-26",
+    "platform": "twitter",
+    "name": "Paytm Soundbox Reseller Pune",
+    "handle": "paytm_soundbox_pune",
+    "bio": "Local vendor providing voice alert soundbox devices for kirana stores in Pune and PCMC.",
+    "avatar_url": "/uploads/neutral_tech.png",
+    "followers_count": 340,
+    "created_at": "2023-01-15T09:00:00Z",
+    "profile_url": "https://twitter.com/paytm_soundbox_pune",
+    "links": [],
+    "is_verified": false
+  },
+  {
+    "id": "soc-27",
+    "platform": "instagram",
+    "name": "Paytm Cashback Hunters",
+    "handle": "paytm_cashback_hunter",
+    "bio": "Aggregating bank offers, credit card bill payment discounts and cashback tips for Paytm users.",
+    "avatar_url": "/uploads/paytm_lookalike.png",
+    "followers_count": 1900,
+    "created_at": "2022-09-05T14:00:00Z",
+    "profile_url": "https://instagram.com/paytm_cashback_hunter",
+    "links": [
+      "https://linktr.ee/cashbackhunter"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-28",
+    "platform": "twitter",
+    "name": "Paytm Fintech Fanclub",
+    "handle": "paytm_fanclub",
+    "bio": "Independent enthusiast community discussing digital payments and fintech innovation in India. Not affiliated with Paytm.",
+    "avatar_url": "/uploads/neutral_tech.png",
+    "followers_count": 2200,
+    "created_at": "2021-06-18T10:00:00Z",
+    "profile_url": "https://twitter.com/paytm_fanclub",
+    "links": [
+      "https://fintechfans.in"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-29",
+    "platform": "linkedin",
+    "name": "Paytm Alumni Network",
+    "handle": "paytm_alumni",
+    "bio": "Professional community for former employees of One97 Communications and Paytm.",
+    "avatar_url": "/uploads/neutral_tech.png",
+    "followers_count": 4500,
+    "created_at": "2019-11-12T11:00:00Z",
+    "profile_url": "https://linkedin.com/groups/paytm_alumni",
+    "links": [
+      "https://alumninetwork.org"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-30",
+    "platform": "facebook",
+    "name": "Fintech India Discussions",
+    "handle": "fintech_india_talk",
+    "bio": "Discussing NPCI UPI guidelines, digital lending, wallets, and regulatory landscape.",
+    "avatar_url": "/uploads/neutral_tech.png",
+    "followers_count": 8900,
+    "created_at": "2020-02-14T08:00:00Z",
+    "profile_url": "https://facebook.com/fintech_india_talk",
+    "links": [
+      "https://fintechindia.org"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-31",
+    "platform": "instagram",
+    "name": "Paytm Valley Farms",
+    "handle": "paytm_valley_farms",
+    "bio": "Fresh organic vegetables, pure honey and mountain apples from our scenic valley farms in Himachal.",
+    "avatar_url": "/uploads/neutral_farm.png",
+    "followers_count": 5400,
+    "created_at": "2019-04-10T12:00:00Z",
+    "profile_url": "https://instagram.com/paytm_valley_farms",
+    "links": [
+      "https://valleyfarmsorganics.in"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-32",
+    "platform": "facebook",
+    "name": "Paytm Valley Fresh Dairy",
+    "handle": "paytm_valley_dairy",
+    "bio": "A2 milk, artisanal paneer and organic ghee delivered fresh every morning from local farm pastures.",
+    "avatar_url": "/uploads/neutral_farm.png",
+    "followers_count": 3200,
+    "created_at": "2020-07-22T09:00:00Z",
+    "profile_url": "https://facebook.com/paytm_valley_dairy",
+    "links": [
+      "https://valleydairy.in"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-33",
+    "platform": "twitter",
+    "name": "Valley Farms Organics",
+    "handle": "valley_farms_ltd",
+    "bio": "Sustainable agriculture and organic farmer collective working across north India.",
+    "avatar_url": "/uploads/neutral_farm.png",
+    "followers_count": 8100,
+    "created_at": "2018-03-15T10:00:00Z",
+    "profile_url": "https://twitter.com/valley_farms_ltd",
+    "links": [
+      "https://valleyfarms.in"
+    ],
+    "is_verified": true
+  },
+  {
+    "id": "soc-34",
+    "platform": "twitter",
+    "name": "Soundbox Audio Repairs",
+    "handle": "soundbox_repairs",
+    "bio": "Independent workshop repairing Bluetooth speakers, audio amplifiers, soundbars and portable monitors in Delhi.",
+    "avatar_url": "/uploads/neutral_tech.png",
+    "followers_count": 1100,
+    "created_at": "2021-08-19T14:00:00Z",
+    "profile_url": "https://twitter.com/soundbox_repairs",
+    "links": [
+      "https://soundboxrepairs.com"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-35",
+    "platform": "instagram",
+    "name": "Mumbai Food & Travel Guide",
+    "handle": "mumbai_food_travel",
+    "bio": "Exploring iconic street food, cafes, heritage restaurants and travel spots across Mumbai.",
+    "avatar_url": "/uploads/neutral_farm.png",
+    "followers_count": 42000,
+    "created_at": "2017-05-11T11:00:00Z",
+    "profile_url": "https://instagram.com/mumbai_food_travel",
+    "links": [
+      "https://mumbaifoodguide.com"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-36",
+    "platform": "twitter",
+    "name": "Fintech India Daily News",
+    "handle": "fintech_india_daily",
+    "bio": "Daily news digest covering digital banking, UPI transaction statistics, RBI monetary policy and startup funding.",
+    "avatar_url": "/uploads/neutral_tech.png",
+    "followers_count": 19500,
+    "created_at": "2019-01-20T08:00:00Z",
+    "profile_url": "https://twitter.com/fintech_india_daily",
+    "links": [
+      "https://fintechindiadaily.com"
+    ],
+    "is_verified": true
+  },
+  {
+    "id": "soc-37",
+    "platform": "linkedin",
+    "name": "Digital Payments Security Forum",
+    "handle": "digital_payments_forum",
+    "bio": "Non-profit research group sharing best practices on fraud prevention, multi-factor authentication and tokenization.",
+    "avatar_url": "/uploads/neutral_tech.png",
+    "followers_count": 7800,
+    "created_at": "2018-09-30T10:00:00Z",
+    "profile_url": "https://linkedin.com/company/digital-payments-forum",
+    "links": [
+      "https://paymentsforum.org"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-38",
+    "platform": "twitter",
+    "name": "Punjab Agro Ventures",
+    "handle": "punjab_agro_ventures",
+    "bio": "Pioneering hydro-cooling, grain silos and farm mechanization for agricultural cooperatives in Punjab.",
+    "avatar_url": "/uploads/neutral_farm.png",
+    "followers_count": 6300,
+    "created_at": "2017-10-14T09:00:00Z",
+    "profile_url": "https://twitter.com/punjab_agro_ventures",
+    "links": [
+      "https://punjabagro.gov.in"
+    ],
+    "is_verified": true
+  },
+  {
+    "id": "soc-39",
+    "platform": "facebook",
+    "name": "Bengaluru Metro Transit News",
+    "handle": "bengaluru_metro_updates",
+    "bio": "Unofficial commuter community sharing Namma Metro train timings, smart card recharge options and route maps.",
+    "avatar_url": "/uploads/neutral_tech.png",
+    "followers_count": 15200,
+    "created_at": "2019-03-25T13:00:00Z",
+    "profile_url": "https://facebook.com/bengaluru_metro_updates",
+    "links": [
+      "https://metroupdates.blr"
+    ],
+    "is_verified": false
+  },
+  {
+    "id": "soc-40",
+    "platform": "instagram",
+    "name": "Himalayan Trek & Tour Club",
+    "handle": "himalayan_trek_club",
+    "bio": "Guided trekking, mountaineering expeditions and camping gear rentals across Himachal and Uttarakhand.",
+    "avatar_url": "/uploads/neutral_farm.png",
+    "followers_count": 28400,
+    "created_at": "2016-12-05T07:00:00Z",
+    "profile_url": "https://instagram.com/himalayan_trek_club",
+    "links": [
+      "https://himalayantreks.in"
+    ],
+    "is_verified": false
+  }
+]

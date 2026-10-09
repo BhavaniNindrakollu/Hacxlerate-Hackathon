@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: impostorradar
+    env: python
+    buildCommand: |
+      cd frontend && npm install && npm run build && cd ../backend && pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --app-dir backend
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: ENVIRONMENT
+        value: production
+      - key: APP_NAME
+        value: ImpostorRadar
+      # Recommended: set these two in the Render dashboard (sync: false asks you
+      # for the values on first deploy). They bootstrap the first administrator
+      # only while the users table is empty. Never commit real values.
+      - key: INITIAL_ADMIN_EMAIL
+        sync: false
+      - key: INITIAL_ADMIN_PASSWORD
+        sync: false
+      # Public self-registration: anyone can create an Analyst account while
+      # true. Set to false after your own accounts exist (then plan user
+      # creation via the admin Users page).
+      - key: ALLOW_SIGNUP
+        value: "true"
+      # Persistent storage. Render disks require a paid instance type; on the
+      # free tier the filesystem is EPHEMERAL and the SQLite database plus
+      # uploads are erased on every deploy/restart. Comment out the disk block
+      # and the three storage env vars below for a throwaway demo instance.
+      - key: DATABASE_URL
+        value: sqlite:////var/data/impostorradar.db
+      - key: UPLOAD_DIR
+        value: /var/data/uploads
+      - key: BACKUP_DIR
+        value: /var/data/backups
+    disk:
+      name: impostorradar-data
+      mountPath: /var/data
+      sizeGB: 1
