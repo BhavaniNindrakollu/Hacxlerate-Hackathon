@@ -8,7 +8,15 @@
  *   can drop the user and send them to the login page.
  */
 
-const BASE_URL = import.meta.env.VITE_API_URL || "";
+const BASE_URL = (import.meta.env.VITE_API_URL || "").replace(/\/+$/, "");
+
+// A deployed SPA without VITE_API_URL silently sends API calls to itself.
+if (!BASE_URL && !/^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname)) {
+  console.error(
+    "[ImpostorRadar] VITE_API_URL is not set — API requests will go to this site and fail. " +
+      "Add VITE_API_URL (the backend origin, no trailing slash) in the Vercel dashboard and redeploy."
+  );
+}
 
 /**
  * Resolve a backend media path (e.g. "/uploads/logo.png") against the API base.
@@ -57,13 +65,24 @@ async function request(path, { method = "GET", body, formData } = {}) {
   }
 
   if (!res.ok) {
-    let detail = `Request failed (HTTP ${res.status})`;
+    let detail = null;
     try {
       const payload = await res.json();
       if (payload.detail) detail = payload.detail;
       else if (payload.message) detail = payload.message;
     } catch {
-      // response body was not JSON; keep the generic message
+      // response body was not JSON — the request likely never reached the API
+      // (wrong/absent VITE_API_URL, or the backend is down)
+    }
+    if (detail === null) {
+      const origin = BASE_URL || window.location.origin;
+      if (res.status === 404) {
+        detail = `The API was not found at ${origin}. Check that VITE_API_URL points to the running backend (no trailing slash) and that the backend is deployed.`;
+      } else if (res.status === 502 || res.status === 503) {
+        detail = `The backend at ${origin} is unavailable (HTTP ${res.status}). It may be starting or crashed — check the Render logs.`;
+      } else {
+        detail = `Request failed (HTTP ${res.status})`;
+      }
     }
     const error = new ApiError(typeof detail === "string" ? detail : JSON.stringify(detail), res.status);
     if (res.status === 401 && !path.startsWith("/api/auth/")) {

@@ -75,7 +75,8 @@ def migrate_schema(engine: Engine) -> None:
     columns = {col["name"] for col in inspector.get_columns("brands")}
     statements: list[str] = []
     if "is_demo" not in columns:
-        statements.append("ALTER TABLE brands ADD COLUMN is_demo BOOLEAN DEFAULT 0")
+        # `false` (not 0) — Postgres rejects a boolean default of integer 0.
+        statements.append("ALTER TABLE brands ADD COLUMN is_demo BOOLEAN DEFAULT false")
     if statements:
         with engine.begin() as conn:
             for stmt in statements:

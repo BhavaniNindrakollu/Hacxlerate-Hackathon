@@ -37,12 +37,17 @@ services:
       # creation via the admin Users page).
       - key: ALLOW_SIGNUP
         value: "true"
-      # Persistent storage. Render disks require a paid instance type; on the
-      # free tier the filesystem is EPHEMERAL and the SQLite database plus
-      # uploads are erased on every deploy/restart. Comment out the disk block
-      # and the three storage env vars below for a throwaway demo instance.
+      # Database. Two supported options (the app works with both unchanged):
+      #   A) Hosted Postgres (recommended, survives redeploys without a disk):
+      #      paste your Supabase (or Render Postgres) connection URL, e.g.
+      #      postgresql://postgres:<password>@db.<project-ref>.supabase.co:5432/postgres?sslmode=require
+      #   B) SQLite on the persistent disk below (needs the paid disk; on the
+      #      free tier without a disk the filesystem is EPHEMERAL and data is
+      #      erased on every deploy/restart).
+      # The disk stays mounted either way — uploaded logos and backups are
+      # always local files, independent of the database choice.
       - key: DATABASE_URL
-        value: sqlite:////var/data/impostorradar.db
+        sync: false
       - key: UPLOAD_DIR
         value: /var/data/uploads
       - key: BACKUP_DIR
