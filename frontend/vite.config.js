@@ -5,9 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
+    strictPort: false,
     proxy: {
-      "/api": "http://127.0.0.1:8000",
-      "/uploads": "http://127.0.0.1:8000",
+      "/api": { target: "http://127.0.0.1:8000", changeOrigin: true },
+      "/uploads": { target: "http://127.0.0.1:8000", changeOrigin: true },
     },
   },
 });

@@ -42,7 +42,7 @@ export default function Signup() {
       await signup({
         email: email.trim(),
         password,
-        full_name: fullName.trim() || null,
+        full_name: fullName.trim(),
       });
       navigate("/", { replace: true });
     } catch (err) {

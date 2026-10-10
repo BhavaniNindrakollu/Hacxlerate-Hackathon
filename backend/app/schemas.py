@@ -126,7 +126,7 @@ class BrandOut(BaseModel):
 class SignupIn(BaseModel):
     email: str
     password: str
-    full_name: str = Field(default="", max_length=120)
+    full_name: str | None = Field(default=None, max_length=120)
 
 
 class LoginIn(BaseModel):
