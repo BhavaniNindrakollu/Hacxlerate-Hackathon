@@ -18,6 +18,7 @@ import {
   getDetection,
   getTakedownText,
   getTakedownPdfUrl,
+  mediaUrl,
 } from "../api/client";
 import { useAuth } from "../auth/AuthContext";
 import SeverityBadge from "../components/SeverityBadge";
@@ -88,8 +89,8 @@ export default function DetectionDetail() {
   const technique = detection.lookalike_technique;
   const isApp = detection.candidate_type === "app";
 
-  const brandLogo = brand.logo_url || "/uploads/paytm_official.png";
-  const candImage = cand.avatar_url || cand.icon_url || "/uploads/neutral_tech.png";
+  const brandLogo = mediaUrl(brand.logo_url || "/uploads/paytm_official.png");
+  const candImage = mediaUrl(cand.avatar_url || cand.icon_url || "/uploads/neutral_tech.png");
 
   return (
     <div className="space-y-6 max-w-5xl mx-auto">
@@ -117,7 +118,7 @@ export default function DetectionDetail() {
               src={candImage}
               alt=""
               onError={(e) => {
-                e.target.src = "/uploads/neutral_tech.png";
+                e.target.src = mediaUrl("/uploads/neutral_tech.png");
               }}
               className="h-16 w-16 rounded-xl border border-slate-700 bg-slate-950 object-cover p-1 shadow"
             />

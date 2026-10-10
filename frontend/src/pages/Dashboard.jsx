@@ -25,7 +25,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { getDashboardStats, runSocialScan, runAppsScan } from "../api/client";
+import { getDashboardStats, runSocialScan, runAppsScan, mediaUrl } from "../api/client";
 import { useAuth } from "../auth/AuthContext";
 import SeverityBadge from "../components/SeverityBadge";
 
@@ -102,10 +102,10 @@ export default function Dashboard() {
       <div className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-slate-800 bg-slate-900/80 p-5 shadow-xl backdrop-blur">
         <div className="flex items-center gap-4">
           <img
-            src={brand.logo_url || "/uploads/paytm_official.png"}
+            src={mediaUrl(brand.logo_url || "/uploads/paytm_official.png")}
             alt={brand.company_name || "Brand"}
             onError={(e) => {
-              e.target.src = "/uploads/neutral_tech.png";
+              e.target.src = mediaUrl("/uploads/neutral_tech.png");
             }}
             className="h-14 w-14 rounded-xl border border-slate-700 bg-slate-950 object-cover p-1 shadow"
           />
@@ -445,10 +445,10 @@ export default function Dashboard() {
                   >
                     <div className="flex items-center gap-3">
                       <img
-                        src={cand.avatar_url || cand.icon_url || "/uploads/neutral_tech.png"}
+                        src={mediaUrl(cand.avatar_url || cand.icon_url || "/uploads/neutral_tech.png")}
                         alt=""
                         onError={(e) => {
-                          e.target.src = "/uploads/neutral_tech.png";
+                          e.target.src = mediaUrl("/uploads/neutral_tech.png");
                         }}
                         className="h-10 w-10 rounded-lg border border-slate-700 bg-slate-950 object-cover p-0.5"
                       />

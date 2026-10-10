@@ -78,7 +78,7 @@ def cookie_base() -> dict:
     settings = get_settings()
     return {
         "path": "/",
-        "samesite": "lax",
+        "samesite": settings.cookie_samesite.lower(),
         "secure": settings.cookie_secure_flag,
         "max_age": settings.session_hours * 3600,
     }

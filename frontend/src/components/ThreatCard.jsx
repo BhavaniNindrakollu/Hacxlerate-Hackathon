@@ -13,6 +13,7 @@ import {
   Check,
 } from "lucide-react";
 import SeverityBadge from "./SeverityBadge";
+import { mediaUrl } from "../api/client";
 
 export default function ThreatCard({ detection, brand, onQuickTakedown }) {
   const [expanded, setExpanded] = useState(false);
@@ -29,8 +30,8 @@ export default function ThreatCard({ detection, brand, onQuickTakedown }) {
   const title = cand.name || cand.title || "Unknown Asset";
   const identifier = cand.handle ? `@${cand.handle.replace(/^@/, "")}` : cand.package_id || "";
   const platform = cand.platform || cand.store || detection.candidate_type;
-  const candImage = cand.avatar_url || cand.icon_url || "/uploads/neutral_tech.png";
-  const brandLogo = brand?.logo_url || "/uploads/paytm_official.png";
+  const candImage = mediaUrl(cand.avatar_url || cand.icon_url || "/uploads/neutral_tech.png");
+  const brandLogo = mediaUrl(brand?.logo_url || "/uploads/paytm_official.png");
 
   const isOfficial = detection.is_official || verdict === "Official";
 
@@ -45,7 +46,7 @@ export default function ThreatCard({ detection, brand, onQuickTakedown }) {
               src={candImage}
               alt={title}
               onError={(e) => {
-                e.target.src = "/uploads/neutral_tech.png";
+                e.target.src = mediaUrl("/uploads/neutral_tech.png");
               }}
               className="h-13 w-13 rounded-xl border border-slate-700 bg-slate-800 object-cover p-0.5"
             />

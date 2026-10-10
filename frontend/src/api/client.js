@@ -10,6 +10,16 @@
 
 const BASE_URL = import.meta.env.VITE_API_URL || "";
 
+/**
+ * Resolve a backend media path (e.g. "/uploads/logo.png") against the API base.
+ * Same-origin deployments pass "" so the path stays relative; split deployments
+ * (Vercel frontend + Render backend) need the absolute backend origin.
+ */
+export function mediaUrl(path) {
+  if (!path || /^https?:\/\//i.test(path)) return path;
+  return `${BASE_URL}${path}`;
+}
+
 export class ApiError extends Error {
   constructor(message, status) {
     super(message);

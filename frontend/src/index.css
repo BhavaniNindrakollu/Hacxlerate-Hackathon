@@ -6,3 +6,17 @@ body {
   margin: 0;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
 }
+
+/* Mobile tap-target accessibility: enforce 44px minimums on touch devices only,
+   so the desktop UI layout is not altered. */
+@media (pointer: coarse) {
+  a,
+  button,
+  select,
+  textarea,
+  input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
+  [role="button"] {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

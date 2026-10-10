@@ -27,6 +27,9 @@ frontend/dist/
 # Env
 .env
 .env.local
+.env.*
+!.env.example
+!**/.env.example
 
 # OS / IDE
 .DS_Store

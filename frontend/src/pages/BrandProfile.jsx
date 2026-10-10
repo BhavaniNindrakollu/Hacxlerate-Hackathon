@@ -12,7 +12,7 @@ import {
   Smartphone,
   Lock,
 } from "lucide-react";
-import { getBrand, saveBrand, uploadLogo, loadDemoBrand } from "../api/client";
+import { getBrand, saveBrand, uploadLogo, loadDemoBrand, mediaUrl } from "../api/client";
 import { useAuth } from "../auth/AuthContext";
 import ConfirmDialog from "../components/ConfirmDialog";
 
@@ -64,7 +64,7 @@ export default function BrandProfile() {
 
   function populateForm(data) {
     setCompanyName(data.company_name || "");
-    setLogoUrl(data.logo_url || "");
+    setLogoUrl(mediaUrl(data.logo_url || ""));
     setKeywordsInput((data.keywords || []).join(", "));
     setSocialAccounts(data.social_accounts || []);
     setOfficialApps(data.official_apps || []);
@@ -100,7 +100,7 @@ export default function BrandProfile() {
 
     try {
       const res = await uploadLogo(file);
-      setLogoUrl(res.logo_url);
+      setLogoUrl(mediaUrl(res.logo_url));
       setMessage("Logo uploaded and updated successfully!");
     } catch (err) {
       setError(err.message || "Failed to upload logo");

@@ -41,6 +41,11 @@ class Settings(BaseSettings):
     initial_admin_email: str = ""
     initial_admin_password: str = ""
     cookie_secure: bool | None = None
+    # "lax" is correct for same-origin deployments. Split deployments
+    # (e.g. Vercel frontend -> Render backend) are cross-site, so the session
+    # and CSRF cookies must be sent on API fetches: set COOKIE_SAMESITE=none
+    # (requires Secure, which cookie_secure_flag enables in production).
+    cookie_samesite: str = "lax"
 
     @property
     def cors_origin_list(self) -> list[str]:

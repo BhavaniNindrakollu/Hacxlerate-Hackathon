@@ -100,14 +100,14 @@ export default function LookalikeLab() {
           </div>
 
           {canSimulate ? (
-            <form onSubmit={handleFormSubmit} className="flex items-center gap-2">
+            <form onSubmit={handleFormSubmit} className="flex w-full flex-wrap items-center gap-2 sm:w-auto">
               <div className="relative">
                 <input
                   type="text"
                   value={inputName}
                   onChange={(e) => setInputName(e.target.value)}
                   placeholder="Enter Brand Name..."
-                  className="w-56 rounded-lg border border-purple-500/40 bg-slate-950 px-3.5 py-2 text-sm text-slate-100 placeholder-slate-500 focus:border-purple-400 focus:outline-none"
+                  className="w-full rounded-lg border border-purple-500/40 bg-slate-950 px-3.5 py-2 text-sm text-slate-100 placeholder-slate-500 focus:border-purple-400 focus:outline-none sm:w-56"
                 />
               </div>
               <button
@@ -160,11 +160,11 @@ export default function LookalikeLab() {
           </label>
         </div>
 
-        <div className="flex items-center justify-between border-t border-slate-800 pt-2 text-xs text-slate-400">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-800 pt-2 text-xs text-slate-400">
           <span>
             Simulated for Brand: <strong className="text-purple-300">{data?.brand_name}</strong>
           </span>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
             <span>
               Total Variants: <strong className="text-slate-200">{data?.total_variants || 0}</strong>
             </span>
@@ -204,7 +204,7 @@ export default function LookalikeLab() {
               >
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <span className="font-mono text-sm font-bold text-slate-100">
+                    <span className="break-all font-mono text-sm font-bold text-slate-100">
                       {v.variant}
                     </span>
                     <div className="mt-1 flex items-center gap-1.5">

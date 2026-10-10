@@ -101,8 +101,8 @@ export default function Users() {
         </div>
       ) : (
         <>
-          {/* Users table */}
-          <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 shadow">
+          {/* Users table (tablet/desktop) */}
+          <div className="hidden overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/60 shadow sm:block">
             <table className="w-full text-left text-xs">
               <thead className="border-b border-slate-800 bg-slate-950/60 text-[11px] uppercase tracking-wide text-slate-400">
                 <tr>
@@ -173,6 +173,62 @@ export default function Users() {
                 })}
               </tbody>
             </table>
+          </div>
+
+          {/* Users stacked cards (mobile) */}
+          <div className="space-y-3 sm:hidden">
+            {users.map((u) => {
+              const isSelf = currentUser && u.id === currentUser.id;
+              const busy = busyUserId === u.id;
+              return (
+                <div key={u.id} className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 shadow">
+                  <div className="flex items-center gap-2.5">
+                    <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-slate-800 text-[11px] font-bold text-sky-300">
+                      {(u.full_name || u.email).slice(0, 2).toUpperCase()}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="truncate font-semibold text-slate-100">
+                        {u.full_name || "—"} {isSelf && <span className="text-[10px] text-sky-400">(you)</span>}
+                      </p>
+                      <p className="truncate text-slate-400">{u.email}</p>
+                    </div>
+                  </div>
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    <select
+                      value={u.role}
+                      disabled={busy}
+                      onChange={(e) => handleUpdate(u, { role: e.target.value })}
+                      className={`rounded-md border bg-slate-950 px-2 py-1.5 text-xs font-semibold focus:outline-none disabled:opacity-50 ${ROLE_BADGE_STYLES[u.role] || ""}`}
+                    >
+                      {ROLES.map((r) => (
+                        <option key={r} value={r}>
+                          {ROLE_LABELS[r]}
+                        </option>
+                      ))}
+                    </select>
+                    <span
+                      className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] font-semibold ${
+                        u.is_active
+                          ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
+                          : "border-red-500/40 bg-red-500/10 text-red-300"
+                      }`}
+                    >
+                      {u.is_active ? "Active" : "Disabled"}
+                    </span>
+                    <button
+                      type="button"
+                      disabled={busy}
+                      onClick={() =>
+                        handleUpdate(u, { role: u.role, is_active: !u.is_active })
+                      }
+                      className="rounded-md border border-slate-700 bg-slate-800 px-2.5 py-1 text-[11px] font-semibold text-slate-200 hover:bg-slate-700 disabled:opacity-50"
+                    >
+                      {busy ? "Saving..." : u.is_active ? "Disable" : "Enable"}
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           {/* Audit log */}

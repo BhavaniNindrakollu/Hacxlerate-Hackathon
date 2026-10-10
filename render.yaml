@@ -2,8 +2,11 @@ services:
   - type: web
     name: impostorradar
     env: python
-    buildCommand: |
-      cd frontend && npm install && npm run build && cd ../backend && pip install -r requirements.txt
+    # Backend only — the React frontend is deployed separately on Vercel and
+    # calls this API via VITE_API_URL. To go back to the all-in-one mode
+    # (backend also serves the built frontend), restore the frontend build
+    # step here: cd frontend && npm install && npm run build && cd ../backend && ...
+    buildCommand: pip install -r backend/requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --app-dir backend
     envVars:
       - key: PYTHON_VERSION
@@ -12,6 +15,16 @@ services:
         value: production
       - key: APP_NAME
         value: ImpostorRadar
+      # Comma-separated allowed browser origins. Set this to your Vercel URL
+      # (e.g. https://your-app.vercel.app) plus any custom domains, and keep the
+      # localhost entries if you also run the dev server against this backend.
+      - key: CORS_ORIGINS
+        sync: false
+      # Cross-site cookies: the Vercel frontend and this backend are different
+      # sites, so the session/CSRF cookies must use SameSite=None (Secure is
+      # auto-enabled by ENVIRONMENT=production).
+      - key: COOKIE_SAMESITE
+        value: "none"
       # Recommended: set these two in the Render dashboard (sync: false asks you
       # for the values on first deploy). They bootstrap the first administrator
       # only while the users table is empty. Never commit real values.
